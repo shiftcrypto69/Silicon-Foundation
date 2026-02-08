@@ -3,261 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Tech Stack | shiftcrypto69</title>
+    <title>Sovereign Tech Stack | Osmosis Style</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --cosmos-bg: #050505;
-            --cosmos-accent: #6c5ce7;
-            --cosmos-text-dim: #9ca3af;
-            --cosmos-border: rgba(255, 255, 255, 0.1);
+            --osmo-bg: #0c091e;
+            --osmo-purple: #9d6eff;
+            --osmo-neon: #2ce0bf;
+            --osmo-glass: rgba(255, 255, 255, 0.05);
+            --osmo-border: rgba(157, 110, 255, 0.2);
         }
 
         body {
-            background-color: var(--cosmos-bg);
+            background-color: var(--osmo-bg);
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             overflow-x: hidden;
         }
 
-        /* Atmosfera Cosmos */
-        body::before {
-            content: "";
+        /* Osmosis Gradient Glow Background */
+        .bg-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(157, 110, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(44, 224, 191, 0.1) 0%, transparent 40%);
             z-index: -1;
         }
 
-        /* 3. Smooth Scaling & Fade Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.98);
-                filter: blur(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                filter: blur(0);
-            }
+        .container-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 20px;
         }
 
-        .hero-section {
-            padding: 100px 20px 60px;
+        /* Hero Section ala Osmosis */
+        .hero-card {
+            background: var(--osmo-glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--osmo-border);
+            border-radius: 40px;
+            padding: 60px 40px;
             text-align: center;
             max-width: 900px;
-            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
 
-        .badge-exclusive {
-            background: rgba(108, 92, 231, 0.1);
-            color: var(--cosmos-accent);
-            border: 1px solid var(--cosmos-accent);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            display: inline-block;
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, var(--osmo-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
         .tagline {
-            font-size: 1.25rem;
-            color: var(--cosmos-text-dim);
-            max-width: 600px;
-            margin: 0 auto 48px;
-            line-height: 1.6;
-        }
-
-        /* ASCII Art Styling */
-        .ascii-cosmos {
-            font-family: monospace;
-            font-size: 8px;
-            color: var(--cosmos-accent);
-            opacity: 0.5;
+            color: #b9b5d1;
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            white-space: pre;
-            line-height: 1.2;
-            display: inline-block;
-            text-align: left;
         }
 
-        /* 4. Implicit Delay for Main Button */
-        .btn-cosmos {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 40px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #fff;
+        /* Butang "Bouncy" Osmosis */
+        .btn-osmo {
+            background: var(--osmo-purple);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 20px;
+            font-weight: 700;
             text-decoration: none;
-            background: #000;
-            border-radius: 12px;
-            border: 1px solid var(--cosmos-border);
-            transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            overflow: hidden;
-            z-index: 1;
-            opacity: 0;
-            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(157, 110, 255, 0.3);
+            border: none;
         }
 
-        .btn-cosmos:hover {
-            color: #fff;
-            box-shadow: 0 0 30px rgba(108, 92, 231, 0.4);
-            transform: translateY(-3px);
-            border-color: var(--cosmos-accent);
+        .btn-osmo:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(157, 110, 255, 0.5);
+            color: white;
         }
 
-        /* Pillar Grid */
-        .pillar-container {
+        /* Glassmorphism Cards */
+        .pillar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             width: 100%;
             max-width: 1100px;
-            padding: 0 20px 80px;
+            margin-top: 50px;
         }
 
-        .pillar-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--cosmos-border);
-            border-radius: 24px;
-            padding: 32px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        .pillar-item {
+            background: var(--osmo-glass);
+            border: 1px solid var(--osmo-border);
+            border-radius: 30px;
+            padding: 30px;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: white;
-            opacity: 0;
-            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            backdrop-filter: blur(5px);
         }
 
-        .pillar-card:hover {
-            border-color: var(--cosmos-accent);
-            background: rgba(108, 92, 231, 0.05);
-            transform: translateY(-10px) scale(1.02);
+        .pillar-item:hover {
+            background: rgba(157, 110, 255, 0.1);
+            border-color: var(--osmo-purple);
+            transform: translateY(-10px);
         }
 
-        /* Staggered Animation Delays */
-        .pillar-card:nth-child(1) { animation-delay: 0.6s; }
-        .pillar-card:nth-child(2) { animation-delay: 0.8s; }
-        .pillar-card:nth-child(3) { animation-delay: 1.0s; }
-        .pillar-card:nth-child(4) { animation-delay: 1.2s; }
-
-        .pillar-card i {
-            font-size: 28px;
+        .pillar-item i {
+            font-size: 2rem;
+            color: var(--osmo-neon);
             margin-bottom: 20px;
-            color: var(--cosmos-accent);
-            display: block;
         }
 
-        .pillar-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+        .pillar-item h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .pillar-card p {
-            color: var(--cosmos-text-dim);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin: 0;
+        .pillar-item p {
+            font-size: 0.9rem;
+            color: #9ca3af;
         }
 
-        /* 2. Mobile Guard */
+        /* Mobile Guard */
         @media (max-width: 768px) {
-            .hero-section { padding-top: 60px; }
-            h1 { font-size: 2.8rem; }
-            .ascii-cosmos {
-                font-size: 4px; /* Kecilkan ASCII untuk mobile */
-                letter-spacing: 0px;
-            }
-            .pillar-container { grid-template-columns: 1fr; }
+            .hero-card { padding: 40px 20px; border-radius: 30px; }
+            .ascii-art { font-size: 3px; }
         }
 
-        footer {
-            padding: 60px 20px;
-            border-top: 1px solid var(--cosmos-border);
-            width: 100%;
-            text-align: center;
-            color: #4b5563;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .ascii-art {
+            font-family: monospace;
+            font-size: 6px;
+            color: var(--osmo-neon);
+            opacity: 0.6;
+            margin-bottom: 30px;
+            white-space: pre;
         }
     </style>
 </head>
 <body>
 
-<section class="hero-section">
-    <div class="badge-exclusive">The Sovereign Era</div>
-    <h1>Sovereign Tech Stack</h1>
-    <p class="tagline">
-        Membina masa hadapan dengan kedaulatan mutlak—dari pasir silikon ke ekosistem yang saling berhubung.
-    </p>
-    
-    <div class="ascii-cosmos">
+<div class="bg-glow"></div>
+
+<div class="container-main">
+    <div class="hero-card">
+        <div class="ascii-art">
  ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
  ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
  ███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
  ╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
  ███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
- ╚══════╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+        </div>
+        
+        <h1>Sovereign Stack</h1>
+        <p class="tagline">Explore the interchain tech stack from silicon to distribution.</p>
+        
+        <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-osmo">
+            Enter Dashboard <i class="fas fa-rocket ms-2"></i>
+        </a>
     </div>
 
-    <br>
-    <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-cosmos">
-        Explore Central Hub <i class="fas fa-arrow-right ms-2"></i>
-    </a>
-</section>
-
-<div class="pillar-container">
-    <a href="https://github.com/shiftcrypto69/Sovereign-Silicon" class="pillar-card" target="_blank">
-        <i class="fas fa-atom"></i>
-        <h3>Silicon Foundation</h3>
-        <p>Ground zero of computation. Logic design, FPGA prototyping, and the physics of semiconductors.</p>
-    </a>
-
-    <a href="https://github.com/shiftcrypto69/Sovereign-Firmware" class="pillar-card" target="_blank">
-        <i class="fas fa-microchip"></i>
-        <h3>Firmware Bridge</h3>
-        <p>The hardware whisperer. Bare-metal C development and register-level control for MCUs.</p>
-    </a>
-
-    <a href="https://github.com/shiftcrypto69/Sovereign-Kernel" class="pillar-card" target="_blank">
-        <i class="fas fa-layer-group"></i>
-        <h3>Kernel Sovereignty</h3>
-        <p>Total system control. Customizing Linux kernels and building AOSP from source.</p>
-    </a>
-
-    <a href="https://github.com/shiftcrypto69/Sovereign-Artifacts" class="pillar-card" target="_blank">
-        <i class="fas fa-box-open"></i>
-        <h3>Artifact Distribution</h3>
-        <p>Packaging sovereignty. Cross-platform distribution for .deb, .apk, and system binaries.</p>
-    </a>
+    <div class="pillar-grid">
+        <a href="https://github.com/shiftcrypto69/Sovereign-Silicon" class="pillar-item">
+            <i class="fas fa-atom"></i>
+            <h3>Silicon</h3>
+            <p>FPGA, Verilog, and the physics of pure hardware.</p>
+        </a>
+        <a href="https://github.com/shiftcrypto69/Sovereign-Firmware" class="pillar-item">
+            <i class="fas fa-microchip"></i>
+            <h3>Firmware</h3>
+            <p>Bare-metal C and low-level MCU orchestration.</p>
+        </a>
+        <a href="https://github.com/shiftcrypto69/Sovereign-Kernel" class="pillar-item">
+            <i class="fas fa-layer-group"></i>
+            <h3>Kernel</h3>
+            <p>AOSP builds and Linux system sovereignty.</p>
+        </a>
+        <a href="https://github.com/shiftcrypto69/Sovereign-Artifacts" class="pillar-item">
+            <i class="fas fa-box-open"></i>
+            <h3>Artifacts</h3>
+            <p>CI/CD and cross-platform binary distribution.</p>
+        </a>
+    </div>
 </div>
-
-<footer>
-    &copy; 2026 SHIFTCRYPTO69 &bull; ENGINEERED SOVEREIGNTY &bull; ARCHITECTING FROM SILICON TO SYSTEMS
-</footer>
 
 </body>
 </html>
